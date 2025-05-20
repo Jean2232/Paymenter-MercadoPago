@@ -1,82 +1,80 @@
-# 💳 [MercadoPago](mercadopago.com.br/developers/) Gateway for [Paymenter](https://paymenter.org/)
+# 💳 [MercadoPago](https://www.mercadopago.com.br/developers/) Gateway for [Paymenter](https://paymenter.org/)
 
-Extensão para integrar o **MercadoPago** como método de pagamento no painel **Paymenter**. Permite pagamentos via **Pix, boleto, cartão de crédito** e saldo da conta Mercado Pago.
+Extension to integrate **MercadoPago** as a payment method on the **Paymenter** panel. Supports payments via **Pix, boleto, credit card**, and Mercado Pago account balance.
 
 ---
 
-## 📂 Instalação
+## 📂 Installation
 
-1. Crie uma pasta `MercadoPago` no diretório de extensões do Paymenter e clone o conteúdo do repósitorio nele:
+1. Create a `MercadoPago` folder in the Paymenter extensions directory and clone the repository content into it:
    ```
    mkdir -p var/www/paymenter/extensions/Gateways/MercadoPago && git clone https://github.com/Jean2232/Paymenter-MercadoPago.git var/www/paymenter/extensions/Gateways/MercadoPago
    ```
-2. No painel admin do Paymenter:
-   - Vá em **Admin > Gateways**
-   - Clique em **New gateway**
-   - Selecione **MercadoPago**
+2. In the Paymenter admin panel:
+   - Go to **Admin > Gateways**
+   - Click **New gateway**
+   - Select **MercadoPago**
 
-3. Informe o **Access Token** da sua conta Mercado Pago (veja abaixo como obter).
+3. Enter your **Access Token** from your Mercado Pago account (see below on how to obtain it).
 
-> ⚠️ Apenas credenciais de PRODUÇÃO são suportadas nesta versão.
+> ⚠️ Only PRODUCTION credentials are supported in this version.
 
 ---
 
-## 🔐 Como obter seu Access Token
+## 🔐 How to get your Access Token
 
-1. Acesse o painel de credenciais:
+1. Go to the credentials panel:  
    [https://www.mercadopago.com.br/developers/panel/credentials](https://www.mercadopago.com.br/developers/panel/credentials)
 
-2. Copie o **Access Token de PRODUÇÃO**, algo como:
+2. Copy your **PRODUCTION Access Token**, which looks like:
    ```
    APP_USR-XXXXXXXXXXXXXXXXXXXXXXXXXXXX
    ```
 
-3. Cole esse token no campo `Access Token` na configuração do gateway no Paymenter.
+3. Paste this token into the `Access Token` field in the gateway settings on Paymenter.
 
 ---
 
-## 🔁 Configurando o Webhook
+## 🔁 Setting up the Webhook
 
-Para que o Paymenter atualize as faturas automaticamente após o pagamento, é necessário configurar um Webhook no Mercado Pago:
+To allow Paymenter to automatically update invoices after payment, you need to configure a Webhook on Mercado Pago:
 
-1. Acesse:
+1. Go to:  
    [https://www.mercadopago.com.br/developers/panel/webhooks](https://www.mercadopago.com.br/developers/panel/webhooks)
 
-2. Crie um novo webhook com a URL:
+2. Create a new webhook with the URL:
    ```
-   https://SEU-DOMINIO.com/extensions/mercadopago/webhook
+   https://YOUR-DOMAIN.com/extensions/mercadopago/webhook
    ```
 
-3. Selecione os seguintes eventos:
+3. Select the following events:
    - `payment`
-   - (opcional) `merchant_order`
+   - (optional) `merchant_order`
 
-4. Salve.
-
----
-
-## 🧪 Testes
-
-1. Gere uma fatura no Paymenter
-2. Escolha "Mercado Pago" como forma de pagamento
-3. Finalize o pagamento usando qualquer método (Pix, cartão, etc.)
-4. Aguarde o processamento e verifique se o pagamento foi marcado como **pago** automaticamente
+4. Save.
 
 ---
 
-## 🛠️ Problemas comuns
+## 🧪 Testing
 
-- Verifique se o domínio tem **HTTPS ativo** e válido
-- Confira os logs em:
+1. Generate an invoice in Paymenter  
+2. Choose "Mercado Pago" as the payment method  
+3. Complete the payment using any method (Pix, credit card, etc.)  
+4. Wait for processing and verify if the invoice is automatically marked as **paid**
+
+---
+
+## 🛠️ Common Issues
+
+- Ensure the domain has **active and valid HTTPS**
+- Check logs at:
   ```
   storage/logs/laravel.log
   ```
-- Certifique-se de que o webhook está corretamente configurado e ativo
+- Make sure the webhook is correctly configured and active
 
 ---
 
-## 📄 Licença
+## 📄 License
 
-Distribuído livremente sob a [MIT License](LICENSE).
-
----
+Freely distributed under the [MIT License](LICENSE).
