@@ -1,6 +1,6 @@
-# 💳 Mercado Pago Gateway for Paymenter
+# 💳 [MercadoPago](mercadopago.com.br/developers/) Gateway for [Paymenter](https://paymenter.org/)
 
-Extensão para integrar o **Mercado Pago** como método de pagamento no painel **Paymenter**. Permite pagamentos via **Pix, boleto, cartão de crédito** e saldo da conta Mercado Pago.
+Extensão para integrar o **MercadoPago** como método de pagamento no painel **Paymenter**. Permite pagamentos via **Pix, boleto, cartão de crédito** e saldo da conta Mercado Pago.
 
 ---
 
@@ -12,8 +12,8 @@ Extensão para integrar o **Mercado Pago** como método de pagamento no painel *
    ```
 2. No painel admin do Paymenter:
    - Vá em **Admin > Gateways**
-   - Clique em **Novo gateway**
-   - Selecione **Mercado Pago**
+   - Clique em **New gateway**
+   - Selecione **MercadoPago**
 
 3. Informe o **Access Token** da sua conta Mercado Pago (veja abaixo como obter).
 
