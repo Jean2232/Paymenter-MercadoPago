@@ -6,11 +6,10 @@ Extensão para integrar o **Mercado Pago** como método de pagamento no painel *
 
 ## 📂 Instalação
 
-1. Faça upload da pasta `mercadopago` para o seguinte caminho no seu projeto:
+1. Crie uma pasta `MercadoPago` no diretório de extensões do Paymenter e clone o conteúdo do repósitorio nele:
    ```
-   modules/extensions/mercadopago/
+   mkdir -p var/www/paymenter/extensions/Gateways/MercadoPago && git clone https://github.com/Jean2232/Paymenter-MercadoPago.git var/www/paymenter/extensions/Gateways/MercadoPago
    ```
-
 2. No painel admin do Paymenter:
    - Vá em **Admin > Gateways**
    - Clique em **Novo gateway**
